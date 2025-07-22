@@ -70,7 +70,7 @@ const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => (
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-brand-primary text-brand-secondary mt-24">
+    <footer className="w-full bg-brand-primary text-brand-secondary">
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
           {/* Logo and Brand */}

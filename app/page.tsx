@@ -1,4 +1,6 @@
+import AboutSection from "./components/home/About"
 import CollectionShowcase from "./components/home/Collections"
+import ContactSection from "./components/home/ContactSection"
 import DiscoverScents from "./components/home/DiscoverScents"
 import Footer from "./components/home/Footer"
 import HomePage from "./components/home/Homepage"
@@ -12,7 +14,9 @@ function page() {
       <CollectionShowcase />
       <IngredientShowcase />
       <DiscoverScents />
+      <AboutSection />
       <TestimonialsCarousel />
+      <ContactSection />
       <Footer/>
     </div>
   )
