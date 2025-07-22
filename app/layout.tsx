@@ -10,8 +10,8 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'MOCKO | Amazing Scent, Distinctive Fragrance',
-  description: 'Mocko delivers distinctive fragrances with an elegant, modern touch - made for those who stand out.',
+  title: 'FIRAAQ | Fragrances',
+  description: 'THE PAIN OF BEING AWAY FROM SOMEONE YOU LOVE',
 }
 
 export default function RootLayout({

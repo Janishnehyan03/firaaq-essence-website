@@ -15,12 +15,17 @@ const config: Config = {
         'brand-primary': '#1F1F1F',
         'brand-secondary': '#FFFFFF',
         'brand-accent': '#E58B44',
+        // New colors inspired by the reference image
+        'brand-hero-bg': '#4A2F2B',  // Dark, earthy background
+        'brand-bottle': '#1A1A1A',  // Dark bottle color
+        'brand-pedestal': '#3D2826', // Pedestal color
       },
       fontFamily: {
-        // This is handled in layout.tsx, but good to have for reference
         sans: ['Manrope', 'sans-serif'],
+        // Add a serif font for headings, as seen in the reference
+        serif: ['"Playfair Display"', 'serif'],
       },
-       animation: {
+      animation: {
         'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
         'fade-in': 'fade-in 1s ease-out forwards 0.5s',
       },
