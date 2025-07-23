@@ -1,7 +1,7 @@
 import AboutSection from "./components/home/About"
 import CollectionShowcase from "./components/home/Collections"
 import ContactSection from "./components/home/ContactSection"
-import DiscoverScents from "./components/home/DiscoverScents"
+// import DiscoverScents from "./components/home/DiscoverScents"
 import Footer from "./components/home/Footer"
 import HomePage from "./components/home/Homepage"
 import IngredientShowcase from "./components/home/IngredientShowCase"
@@ -13,7 +13,7 @@ function page() {
       <HomePage />
       <CollectionShowcase />
       <IngredientShowcase />
-      <DiscoverScents />
+      {/* <DiscoverScents /> */}
       <AboutSection />
       <TestimonialsCarousel />
       <ContactSection />

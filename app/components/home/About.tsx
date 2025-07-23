@@ -398,7 +398,7 @@ export default function AboutSection() {
                 }}
               >
                 <Image
-                  src="/images/floral.jpg"
+                  src="/images/img1.jpg"
                   alt="Master perfumer crafting FIRAAQ fragrances"
                   fill
                   className="

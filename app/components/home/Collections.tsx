@@ -6,45 +6,59 @@ import { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 // --- TypeScript Interface for type safety ---
-interface Collection {
-  title: string;
-  subtitle: string;
-  label: string;
-  image: string;
-  alt: string;
+interface Product {
+  name: string;
+  rateUAE: string;
+  rateIndia: string;
+  volume: string;
+  category: string;
+  subtitle?: string;
+  label?: string;
+  image?: string;
+  alt?: string;
   featured?: boolean;
 }
 
-// Enhanced data with featured flag
-const collections: Collection[] = [
+// Updated data with FIRAAQ products
+const products: Product[] = [
   {
-    title: "Noir Collection",
+    name: "FIRAAQ MEN",
     subtitle:
-      "Bold, mysterious, and deeply captivating — for those who dare to stand out in the shadows.",
-    label: "30+ Perfumes",
-    image: "/images/limited.jpg",
-    alt: "A sophisticated bottle from the Noir Collection",
+      "Bold, sophisticated fragrances crafted for the modern gentleman who commands attention.",
+    image: "/images/img3.jpg",
+    alt: "FIRAAQ Men's fragrance collection",
     featured: true,
+    rateUAE: "120 AED",
+    rateIndia: "2999 INR",
+    volume: "80 ML",
+    category: "Men",
   },
   {
-    title: "Essence Collection",
+    name: "FIRAAQ UNISEX",
     subtitle:
-      "Fresh, clean, and effortlessly charming for daily confidence that never goes unnoticed.",
-    label: "25+ Perfumes",
-    image: "/images/oud.jpg",
-    alt: "A bright, clean bottle from the Essence Collection",
+      "A versatile and timeless fragrance designed for both men and women.",
+    image: "/images/img2.jpg",
+    alt: "FIRAAQ Unisex fragrance",
+    rateUAE: "99 AED",
+    rateIndia: "2499 INR",
+    volume: "80 ML",
+    category: "Unisex",
   },
   {
-    title: "Botanica Collection",
+    name: "FIRAAQ WOMEN",
     subtitle:
-      "Nature-inspired scents with calming, earthy elegance that connects you to the earth.",
-    label: "40+ Perfumes",
-    image: "/images/floral.jpg",
-    alt: "A nature-inspired bottle from the Botanica Collection",
+      "Elegant and captivating scents designed for the confident, sophisticated woman.",
+    image: "/images/img3.jpg",
+    alt: "FIRAAQ Women's fragrance",
+    rateUAE: "99 AED",
+    rateIndia: "2499 INR",
+    volume: "80 ML",
+    category: "Women",
   },
+  
 ];
 
-export default function CollectionShowcase() {
+export default function ProductShowcase() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   // Animation variants
@@ -98,8 +112,8 @@ export default function CollectionShowcase() {
 
   return (
     <section
-      className="relative w-full max-w-7xl mx-auto pt-20 pb-32 px-4 sm:px-6 "
-      id="collection"
+      className="relative w-full max-w-7xl mx-auto pt-20 pb-32 px-4 sm:px-6"
+      id="products"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -161,7 +175,7 @@ export default function CollectionShowcase() {
             >
               <Sparkles className="w-4 h-4" />
             </motion.div>
-            Our Collections
+            FIRAAQ Products
           </motion.div>
         </motion.div>
 
@@ -174,10 +188,10 @@ export default function CollectionShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Discover Fragrances
+            Discover FIRAAQ
             <br />
             <span className="relative">
-              from our{" "}
+              Premium{" "}
               <motion.span
                 className="text-transparent bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 bg-clip-text relative"
                 animate={{
@@ -189,7 +203,7 @@ export default function CollectionShowcase() {
                   ease: "easeInOut",
                 }}
               >
-                Exclusive Collections
+                Fragrance Products
               </motion.span>
               <motion.div
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent"
@@ -208,8 +222,8 @@ export default function CollectionShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Immerse yourself in carefully curated fragrance journeys that tell
-            stories of elegance, mystery, and natural beauty.
+            Experience luxury fragrances crafted with precision. Each 80ml bottle
+            delivers exceptional quality at accessible prices across UAE and India.
           </motion.p>
         </motion.div>
 
@@ -218,13 +232,13 @@ export default function CollectionShowcase() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
         >
-          {collections.map((col, i) => (
+          {products.map((product, i) => (
             <motion.div
-              key={col.title}
+              key={product.name}
               className={`
                 relative rounded-3xl overflow-hidden flex flex-col justify-end 
                 min-h-[520px] group cursor-pointer
-                ${col.featured ? "md:col-span-2 lg:col-span-1" : ""}
+                ${product.featured ? "md:col-span-2 lg:col-span-1" : ""}
               `}
               variants={cardVariants}
               whileHover={{
@@ -237,8 +251,8 @@ export default function CollectionShowcase() {
               {/* Background image with enhanced hover effect */}
               <div className="absolute inset-0">
                 <Image
-                  src={col.image}
-                  alt={col.alt}
+                  src={product.image || "/images/default.jpg"}
+                  alt={product.alt || product.name}
                   fill
                   className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-110"
                   priority={i < 3}
@@ -268,42 +282,6 @@ export default function CollectionShowcase() {
                 />
               </div>
 
-              {/* Featured badge */}
-              {col.featured && (
-                <motion.div
-                  className="absolute top-6 right-6 z-20"
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.1 + 0.5 }}
-                >
-                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                    Featured
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Enhanced label */}
-              <motion.div
-                className="absolute top-6 left-6 z-20"
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: i * 0.1 + 0.3 }}
-              >
-                <motion.div
-                  className="
-                    bg-black/40 backdrop-blur-md text-white text-sm font-semibold 
-                    px-4 py-2 rounded-full border border-white/20
-                  "
-                  whileHover={{
-                    backgroundColor: "rgba(251, 191, 36, 0.2)",
-                    borderColor: "rgba(251, 191, 36, 0.4)",
-                    scale: 1.05,
-                  }}
-                >
-                  {col.label}
-                </motion.div>
-              </motion.div>
-
               {/* Enhanced content */}
               <motion.div
                 className="relative z-20 p-8"
@@ -321,18 +299,39 @@ export default function CollectionShowcase() {
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  {col.title}
+                  {product.name}
                 </motion.h3>
 
                 <motion.p
-                  className="text-white/90 text-base font-medium mb-6 leading-relaxed"
+                  className="text-white/90 text-base font-medium mb-4 leading-relaxed"
                   animate={{
                     opacity: hoveredIndex === i ? 1 : 0.8,
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  {col.subtitle}
+                  {product.subtitle}
                 </motion.p>
+
+                {/* Pricing information */}
+                <motion.div
+                  className="flex flex-wrap gap-3 mb-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{
+                    opacity: hoveredIndex === i ? 1 : 0.7,
+                    y: hoveredIndex === i ? 0 : 10,
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="bg-white/10 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-full border border-white/20">
+                    UAE: {product.rateUAE}
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-full border border-white/20">
+                    India: {product.rateIndia}
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm text-white text-sm px-3 py-1.5 rounded-full border border-white/20">
+                    {product.volume}
+                  </div>
+                </motion.div>
 
                 {/* Call to action button */}
                 <motion.div
@@ -356,7 +355,7 @@ export default function CollectionShowcase() {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Explore Collection
+                    Shop Now
                     <motion.div
                       whileHover={{ x: 4 }}
                       transition={{ type: "spring", stiffness: 400 }}
@@ -370,7 +369,7 @@ export default function CollectionShowcase() {
           ))}
         </motion.div>
 
-        {/* View All Collections Button */}
+        {/* View All Products Button */}
         <motion.div
           className="flex justify-center mt-16"
           initial={{ opacity: 0, y: 30 }}
@@ -396,7 +395,7 @@ export default function CollectionShowcase() {
             whileTap={{ scale: 0.98 }}
           >
             <span className="relative z-10 flex items-center justify-center gap-3">
-              View All Collections
+              View All FIRAAQ Products
               <motion.div
                 whileHover={{ x: 6 }}
                 transition={{ type: "spring", stiffness: 300 }}
