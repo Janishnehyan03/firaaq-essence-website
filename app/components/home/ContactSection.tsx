@@ -6,33 +6,7 @@ import { motion, AnimatePresence, easeOut } from "framer-motion";
 
 // Contact information data (no changes here)
 const contactInfo = [
-  // ... (your contactInfo array remains the same)
-  {
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-        />
-      </svg>
-    ),
-    title: "Visit Our Store",
-    details: ["123 Fragrance Avenue", "Luxury District, City 12345"],
-    link: "https://maps.google.com",
-  },
+ 
   {
     icon: (
       <svg
@@ -49,9 +23,9 @@ const contactInfo = [
         />
       </svg>
     ),
-    title: "Call Us",
-    details: ["+1 (555) 123-4567", "Mon - Sat: 9AM - 7PM"],
-    link: "tel:+15551234567",
+    title: "Contact us on WhatsApp",
+    details: ["Meet us online"],
+    link: "tel:+918129775892",
   },
   {
     icon: (
@@ -70,8 +44,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email Us",
-    details: ["hello@firaaq.com", "support@firaaq.com"],
-    link: "mailto:hello@firaaq.com",
+    details: ["ewcosmetics92@gmail.com", ],
+    link: "mailto:ewcosmetics92@gmail.com",
   },
 ];
 

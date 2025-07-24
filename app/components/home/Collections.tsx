@@ -337,42 +337,42 @@ export default function ProductShowcase() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
-                    opacity: hoveredIndex === i ? 1 : 0,
-                    y: hoveredIndex === i ? 0 : 20,
+                  opacity: 1,
+                  y: 0,
                   }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.button
-                    className="
-                      inline-flex items-center gap-2 px-6 py-3
-                      bg-gradient-to-r from-amber-400 to-orange-500
-                      text-black font-semibold text-sm rounded-full
-                      shadow-lg hover:shadow-xl
-                    "
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      const message = encodeURIComponent(
-                        `Hi, I'm interested in:\n` +
-                        `Product: ${product.name}\n` +
-                        `Category: ${product.category}\n` +
-                        `Volume: ${product.volume}\n` +
-                        `UAE Price: ${product.rateUAE}\n` +
-                        `India Price: ${product.rateIndia}`
-                      );
-                      window.open(`https://wa.me/918129775892?text=${message}`, "_blank");
-                    }}
+                  className="
+                    inline-flex items-center gap-2 px-6 py-3
+                    bg-gradient-to-r from-amber-400 to-orange-500
+                    text-black font-semibold text-sm rounded-full
+                    shadow-lg hover:shadow-xl
+                  "
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const message = encodeURIComponent(
+                    `Hi, I'm interested in:\n` +
+                    `Product: ${product.name}\n` +
+                    `Category: ${product.category}\n` +
+                    `Volume: ${product.volume}\n` +
+                    `UAE Price: ${product.rateUAE}\n` +
+                    `India Price: ${product.rateIndia}`
+                    );
+                    window.open(`https://wa.me/918129775892?text=${message}`, "_blank");
+                  }}
                   >
-                    Shop Now
-                    <motion.div
-                      whileHover={{ x: 4 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.div>
+                  Shop Now
+                  <motion.div
+                    whileHover={{ x: 4 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
                   </motion.button>
                 </motion.div>
               </motion.div>

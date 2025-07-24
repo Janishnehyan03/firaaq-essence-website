@@ -293,7 +293,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.6 }}
             >
-              <Link href={"#contact"} >
+              <Link
+                href="https://wa.me/918129775892"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="flex items-center justify-center gap-2">
                   <motion.div
                     whileHover={{ rotate: 15 }}
@@ -307,12 +311,13 @@ export default function Hero() {
             </motion.button>
           </motion.div>
         </div>
-      </motion.div>
+      </motion.div >
 
       {/* Scroll Indicator */}
-      <motion.div
+      < motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 20 }
+        }
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
       >
@@ -340,7 +345,7 @@ export default function Hero() {
         >
           Scroll
         </motion.p>
-      </motion.div>
-    </section>
+      </motion.div >
+    </section >
   );
 }
