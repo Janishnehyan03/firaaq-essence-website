@@ -113,7 +113,7 @@ export default function ProductShowcase() {
   return (
     <section
       className="relative w-full max-w-7xl mx-auto pt-20 pb-32 px-4 sm:px-6"
-      id="products"
+      id="collection"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -354,6 +354,17 @@ export default function ProductShowcase() {
                       boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)",
                     }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      const message = encodeURIComponent(
+                        `Hi, I'm interested in:\n` +
+                        `Product: ${product.name}\n` +
+                        `Category: ${product.category}\n` +
+                        `Volume: ${product.volume}\n` +
+                        `UAE Price: ${product.rateUAE}\n` +
+                        `India Price: ${product.rateIndia}`
+                      );
+                      window.open(`https://wa.me/918129775892?text=${message}`, "_blank");
+                    }}
                   >
                     Shop Now
                     <motion.div
